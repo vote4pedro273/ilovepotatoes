@@ -1,60 +1,43 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cow Meme Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+    <link rel="stylesheet" href="https://newcss.net/theme/night.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ruluko&display=swap" rel="stylesheet">
+    <script>
+      const Todd = ["When life gives you hay, make milkshakes", "When someone asks if I'm a cow, I just say 'no, I'm an artist", "When you've been grazing all day and suddenly forget what you were doing.", "When you're trying to see what's going on in the neighbor's pasture.", "When you're having a bad day and just need to moooooove on.", "When you know you're the best cow in the herd.", "When you're trying to make friends with the cows next door, but they're not interested.", "When you're having a lazy day and just want to chew your cud.", "When you realize that the grass really is greener on the other side.", "When you're just a silly cow trying to make the other cows laugh.", "When you're living your best life as a happy cow in the pasture."];
+      let cowPics = ["https://m.media-amazon.com/images/I/71F9wGdFGzL._AC_UF894,1000_QL80_.jpg", "https://i.pinimg.com/originals/e6/0f/82/e60f828d7fe3a03a863776a9e44290e1.jpg", "https://images.unsplash.com/photo-1556997685-309989c1aa82?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnVubnklMjBjb3d8ZW58MHx8MHx8&w=1000&q=80", "https://i.pinimg.com/originals/9f/c4/c6/9fc4c6ce00de0d4ffb3f98f9c7d4e852.jpg", "https://thumbs.dreamstime.com/b/amusing-elongated-face-cow-standing-background-forest-grass-looks-camera-lens-156049813.jpg"];
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Cow Meme Generator</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
-  <link rel="stylesheet" href="https://newcss.net/theme/night.css"><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ruluko&display=swap" rel="stylesheet">
-  <script>
-    const Todd = ["When life gives you hay, make milkshakes",
-              "When someone asks if I'm a cow, I just say 'no, I'm an artist",
-              "When you've been grazing all day and suddenly forget what you were doing.",
-             "When you're trying to see what's going on in the neighbor's pasture.",
-             "When you're having a bad day and just need to moooooove on.",
-             "When you know you're the best cow in the herd.",
-             "When you're trying to make friends with the cows next door, but they're not interested.",
-             "When you're having a lazy day and just want to chew your cud.",
-             "When you realize that the grass really is greener on the other side.",
-             "When you're just a silly cow trying to make the other cows laugh.",
-             "When you're living your best life as a happy cow in the pasture."];
+      function generateCowMeme() {
+        const index = Math.floor(Math.random() * Todd.length);
+        const badCowMemeByChatGPT = Todd[index];
+        const cowIndex = Math.floor(Math.random() * cowPics.length);
+        const pic = cowPics[cowIndex];
+        document.getElementById("cowMemeOutput").innerHTML = "Goofy Meme: " + badCowMemeByChatGPT
+        document.getElementById("goofyCowImage").src = pic;
+      }
+    </script>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
 
-let cowPics = ["https://m.media-amazon.com/images/I/71F9wGdFGzL._AC_UF894,1000_QL80_.jpg",
-              "https://i.pinimg.com/originals/e6/0f/82/e60f828d7fe3a03a863776a9e44290e1.jpg",
-              "https://images.unsplash.com/photo-1556997685-309989c1aa82?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnVubnklMjBjb3d8ZW58MHx8MHx8&w=1000&q=80",
-              "https://i.pinimg.com/originals/9f/c4/c6/9fc4c6ce00de0d4ffb3f98f9c7d4e852.jpg",
-              "https://thumbs.dreamstime.com/b/amusing-elongated-face-cow-standing-background-forest-grass-looks-camera-lens-156049813.jpg"];
-
-function generateCowMeme() {
-  const index = Math.floor(Math.random() * Todd.length);
-  const badCowMemeByChatGPT = Todd[index]; 
-  const cowIndex = Math.floor(Math.random() * cowPics.length);
-  const pic = cowPics[cowIndex]; 
-  document.getElementById("cowMemeOutput").innerHTML = "Goofy Meme: " + badCowMemeByChatGPT
-  document.getElementById("goofyCowImage").src = pic;
-}
-  </script>
-  <style>
-    html {
-  height: 100%;
-  width: 100%;
-}
-
-body {
-  font-family: 'Ruluko', sans-serif;
-}
-
-  </style>
-</head>
-
-<body>
-  <h1>Cow Meme Generator</h1>
-  <button onclick="generateCowMeme();">Generate Random Cow Meme</button>
-  <p id="cowMemeOutput">Press the button to generate your cow meme. Disclaimer: I generated these using Chat GPT so they're all god awful. Thanks :)</p>
-  <img id="goofyCowImage"></img>
-</body>
-
+      body {
+        font-family: 'Ruluko', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cow Meme Generator</h1>
+    <h3><a href="/">Go home</a></h3>
+    <button onclick="generateCowMeme();">Generate Random Cow Meme</button>
+    <p id="cowMemeOutput">Press the button to generate your cow meme. Disclaimer: I generated these using Chat GPT so they're all god awful. Thanks :)</p>
+    <img id="goofyCowImage"></img>
+  </body>
 </html>
